@@ -1,0 +1,85 @@
+{
+    "type": "Root",
+    "cxx_class": "gem5::Root",
+    "name": null,
+    "path": "root",
+    "eventq_index": 0,
+    "full_system": true,
+    "sim_quantum": 0,
+    "time_sync_enable": false,
+    "time_sync_period": 100000000000,
+    "time_sync_spin_threshold": 100000000,
+    "system": {
+        "type": "EtherSwitch",
+        "cxx_class": "gem5::EtherSwitch",
+        "name": "system",
+        "path": "system",
+        "delay": 0,
+        "delay_var": 0,
+        "dump": null,
+        "eventq_index": 0,
+        "fabric_speed": "800.000000",
+        "output_buffer_size": 1048576,
+        "time_to_live": 10000000000,
+        "portlink": [
+            {
+                "type": "DistEtherLink",
+                "cxx_class": "gem5::DistEtherLink",
+                "name": "portlink0",
+                "path": "system.portlink0",
+                "delay": 500000,
+                "delay_var": 0,
+                "dist_rank": 0,
+                "dist_size": 2,
+                "dist_sync_on_pseudo_op": false,
+                "dump": null,
+                "eventq_index": 0,
+                "is_switch": true,
+                "num_nodes": 2,
+                "server_name": "127.0.0.1",
+                "server_port": 2200,
+                "speed": "800.000000",
+                "sync_repeat": 500000,
+                "sync_start": 0,
+                "int0": {
+                    "role": "ETHERNET",
+                    "peer": "system.interface[0]",
+                    "is_source": "False"
+                }
+            },
+            {
+                "type": "DistEtherLink",
+                "cxx_class": "gem5::DistEtherLink",
+                "name": "portlink1",
+                "path": "system.portlink1",
+                "delay": 500000,
+                "delay_var": 0,
+                "dist_rank": 0,
+                "dist_size": 2,
+                "dist_sync_on_pseudo_op": false,
+                "dump": null,
+                "eventq_index": 0,
+                "is_switch": true,
+                "num_nodes": 2,
+                "server_name": "127.0.0.1",
+                "server_port": 2200,
+                "speed": "800.000000",
+                "sync_repeat": 500000,
+                "sync_start": 0,
+                "int0": {
+                    "role": "ETHERNET",
+                    "peer": "system.interface[1]",
+                    "is_source": "False"
+                }
+            }
+        ],
+        "interface": {
+            "role": "ETHERNET",
+            "peer": [
+                "system.portlink0.int0",
+                "system.portlink1.int0"
+            ],
+            "is_source": "False"
+        }
+    }
+}

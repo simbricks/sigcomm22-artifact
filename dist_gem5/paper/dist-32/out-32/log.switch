@@ -1,0 +1,50 @@
+Global frequency set at 1000000000000 ticks per second
+build/X86/dev/net/tcp_iface.cc:97: info: tcp_iface listening on port 2200
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:0 -> (node:0, iface:0))
+build/X86/dev/net/dist_iface.cc:74: info: Next dist synchronisation tick is changed to 0.
+build/X86/dev/net/dist_iface.cc:83: info: Dist synchronisation interval is changed to 500000.
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:1 -> (node:1, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:2 -> (node:2, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:3 -> (node:3, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:4 -> (node:4, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:5 -> (node:5, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:6 -> (node:6, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:7 -> (node:7, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:8 -> (node:8, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:9 -> (node:9, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:10 -> (node:10, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:11 -> (node:11, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:12 -> (node:12, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:13 -> (node:13, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:14 -> (node:14, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:15 -> (node:15, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:16 -> (node:16, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:17 -> (node:17, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:18 -> (node:18, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:19 -> (node:19, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:20 -> (node:20, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:21 -> (node:21, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:22 -> (node:22, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:23 -> (node:23, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:24 -> (node:24, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:25 -> (node:25, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:26 -> (node:26, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:27 -> (node:27, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:28 -> (node:28, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:29 -> (node:29, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:30 -> (node:30, iface:0))
+build/X86/dev/net/tcp_iface.cc:178: info: Link okay  (iface:31 -> (node:31, iface:0))
+build/X86/dev/net/dist_iface.cc:364: info: Dist sync scheduled at 0 and repeats 500000
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.1.0.0
+gem5 compiled Sep  2 2021 23:51:22
+gem5 started Sep  7 2021 12:43:46
+gem5 executing on swsnetlab03, pid 40214
+command line: /DS/endhost-networking/work/sim/hejing/dist-gem5/gem5/util/dist/test/./../../../build/X86/gem5.opt -d /DS/endhost-networking/work/sim/hejing/dist-gem5/gem5/util/dist/test/out-32/m5out.switch /DS/endhost-networking/work/sim/hejing/dist-gem5/gem5/util/dist/test/./../../../configs/dist/sw.py --dist-sync-start=0t --dist-sync-repeat=500ns --ethernet-linkdelay=500ns --checkpoint-dir=/DS/endhost-networking/work/sim/hejing/dist-gem5/gem5/util/dist/test/m5out.switch --is-switch --dist-size=32 --dist-server-port=2200
+
+info: Standard input is not a terminal, disabling listeners.
+**** REAL SIMULATION ****
+build/X86/sim/simulate.cc:107: info: Entering event queue @ 0.  Starting simulation...
+Exiting @ tick 14011958000000 because exit request from gem5 peers

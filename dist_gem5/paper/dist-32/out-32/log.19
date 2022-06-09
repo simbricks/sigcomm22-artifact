@@ -1,0 +1,64 @@
+Global frequency set at 1000000000000 ticks per second
+build/X86/mem/mem_interface.cc:793: warn: DRAM device capacity (32768 Mbytes) does not match the address range assigned (512 Mbytes)
+build/X86/sim/kernel_workload.cc:46: info: kernel located at: /DS/endhost-networking/work/sim/hejing/simbricks/images/vmlinux
+      0: testsys.pc.south_bridge.cmos.rtc: Real-time clock set to Sun Jan  1 00:00:00 2012
+build/X86/dev/serial/terminal.cc:170: warn: Sockets disabled, not accepting terminal connections
+build/X86/dev/net/tcp_iface.cc:202: info: Link okay  (iface:0 -> switch iface:19)
+build/X86/dev/net/dist_iface.cc:74: info: Next dist synchronisation tick is changed to 0.
+build/X86/dev/net/dist_iface.cc:83: info: Dist synchronisation interval is changed to 500000.
+build/X86/base/remote_gdb.cc:377: warn: Sockets disabled, not accepting gdb connections
+build/X86/dev/intel_8254_timer.cc:125: warn: Reading current count from inactive timer.
+build/X86/dev/net/dist_iface.cc:364: info: Dist sync scheduled at 0 and repeats 500000
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.1.0.0
+gem5 compiled Sep  2 2021 23:51:22
+gem5 started Sep  7 2021 12:43:48
+gem5 executing on swsnetlab03, pid 40585
+command line: /DS/endhost-networking/work/sim/hejing/dist-gem5/gem5/util/dist/test/./../../../build/X86/gem5.opt -d /DS/endhost-networking/work/sim/hejing/dist-gem5/gem5/util/dist/test/out-32/m5out.19 /DS/endhost-networking/work/sim/hejing/dist-gem5/gem5/util/dist/test/./../../../configs/example/fs.py --cpu-clock=3GHz --caches --l2cache --l3cache --l1d_size=32kB --l1i_size=32kB --l2_size=2MB --l3_size=32MB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=4 --l3_assoc=16 --cacheline_size=64 --ddio-enabled --ddio-way-part=8 --mem-type=DDR4_2400_16x4 --cpu-type=TimingSimpleCPU --num-cpus=1 --disk-image=/DS/endhost-networking/work/sim/hejing/simbricks/images/output-base/base.raw --disk-image=/DS/endhost-networking/work/sim/hejing/dist-gem5/gem5/util/dist/test/./../../../util/dist/test/cfg.client.0.tar --kernel=/DS/endhost-networking/work/sim/hejing/simbricks/images/vmlinux --dist-sync-start=0t --dist-sync-repeat=500ns --ethernet-linkdelay=500ns --checkpoint-dir=/DS/endhost-networking/work/sim/hejing/dist-gem5/gem5/util/dist/test/m5out.19 --dist --dist-rank=19 --dist-size=32 --dist-server-name=127.0.0.1 --dist-server-port=2200
+
+info: Standard input is not a terminal, disabling listeners.
+**** REAL SIMULATION ****
+warn: iobus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: bridge.master is deprecated. `master` is now called `mem_side_port`
+warn: membus.master is deprecated. `master` is now called `mem_side_ports`
+warn: bridge.slave is deprecated. `slave` is now called `cpu_side_port`
+warn: iobus.master is deprecated. `master` is now called `mem_side_ports`
+warn: apicbridge.slave is deprecated. `slave` is now called `cpu_side_port`
+warn: membus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: apicbridge.master is deprecated. `master` is now called `mem_side_port`
+warn: iobus.master is deprecated. `master` is now called `mem_side_ports`
+warn: iobus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: membus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: tol2bus.master is deprecated. `master` is now called `mem_side_ports`
+warn: tol3bus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: tol3bus.master is deprecated. `master` is now called `mem_side_ports`
+warn: membus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: tol2bus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: tol2bus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: tol2bus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: tol2bus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: membus.master is deprecated. `master` is now called `mem_side_ports`
+warn: membus.master is deprecated. `master` is now called `mem_side_ports`
+warn: membus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: iobus.master is deprecated. `master` is now called `mem_side_ports`
+warn: tol3bus.slave is deprecated. `slave` is now called `cpu_side_ports`
+warn: testsys.workload.acpi_description_table_pointer.rsdt adopting orphan SimObject param 'entries'
+build/X86/sim/simulate.cc:107: info: Entering event queue @ 0.  Starting simulation...
+build/X86/arch/x86/cpuid.cc:181: warn: x86 cpuid family 0x0000: unimplemented function 6
+build/X86/arch/x86/cpuid.cc:181: warn: x86 cpuid family 0x0000: unimplemented function 6
+build/X86/arch/x86/cpuid.cc:181: warn: x86 cpuid family 0x0000: unimplemented function 6
+build/X86/arch/x86/generated/exec-ns.cc.inc:27: warn: instruction 'fninit' unimplemented
+build/X86/dev/x86/pc.cc:117: warn: Don't know what interrupt to clear for console.
+build/X86/arch/x86/generated/exec-ns.cc.inc:27: warn: instruction 'sgdt_Ms' unimplemented
+build/X86/arch/x86/cpuid.cc:181: warn: x86 cpuid family 0x0000: unimplemented function 6
+build/X86/arch/x86/cpuid.cc:181: warn: x86 cpuid family 0x0000: unimplemented function 6
+build/X86/arch/x86/cpuid.cc:181: warn: x86 cpuid family 0x0000: unimplemented function 6
+build/X86/arch/x86/cpuid.cc:185: warn: x86 cpuid: unknown family 0x4000
+build/X86/arch/x86/generated/exec-ns.cc.inc:27: warn: instruction 'fwait' unimplemented
+build/X86/dev/x86/i8042.cc:281: warn: Write to unknown i8042 (keyboard controller) command port.
+build/X86/dev/x86/pc.cc:130: warn: Tried to clear PCI interrupt 14
+build/X86/arch/x86/generated/exec-ns.cc.inc:27: warn: instruction 'verw_Mw_or_Rv' unimplemented
+build/X86/arch/generic/debugfaults.hh:144: warn: MOVNTDQ: Ignoring non-temporal hint, modeling as cacheable!
+Exiting @ tick 14011958000000 because exit request from gem5 peers
