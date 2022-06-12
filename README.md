@@ -89,15 +89,15 @@ Our artifact comprises the following experiments from the paper. The table below
 | --- | --- | --- | --- | --- | --- |
 | [dctcp](dctcp/README.md) | §3, para 3 | Figure 1 | ~240 min | ~52 hours | 9 per data point |
 | [netperf](netperf/README.md) | §7.2, §A.4 | Tab.1, Tab. 3 | see table |  | 5 per data point |
-| [sync-overhead](sync-overhead/README.md) | §7.3.1, para 1 | N/A |  | ~200 min | 1 or 3 cores |
+| [sync_overhead](sync_overhead/README.md) | §7.3.1, para 1 | N/A |  | ~200 min | 1 or 3 cores |
 | [pci-latency](pci-latency/README.md) | §7.3.1, para 2 | Figure 9 | see the graph |  | 5 per data point |
-| [dist-gem5](dist-gem5/README.md) | §7.3.1 | Figure 6 | see the graph |  | number of hosts + 1 |
+| [dist_gem5](dist_gem5/README.md) | §7.3.1 | Figure 6 | see the graph |  | number of hosts + 1 |
 | [decomp-pci](decomp-pci/README.md) | §7.3.2 para 1 | N/A |  |  | no need to run. compare the data generated from dist-gem5 experiment and host-scale |
-| [net-decmp](net-decomp/README.md) | §7.3.2 para 2,3 | N/A |  | ~5 min | 3~37 |
-| [host-scale](host-scale/README.md) | §7.4.1 | Figure 7 | see graph |  | 5 - 43 |
+| [net-decmp](net-decmp/README.md) | §7.3.2 para 2,3 | N/A |  | ~5 min | 3~37 |
+| [host_scale](host_scale/README.md) | §7.4.1 | Figure 7 | see graph |  | 5 - 43 |
 | [dist_memcache](dist_memcache/README.md) | §7.4.2 para 2 | Figure 8 | 200 - 1000 min | ~ 120 hours | 1x44 - 26x44 |
 | [eth-accuracy](eth-accuracy/README.md) | §7.5 | N/A |  | seconds | 2 |
-| [pci-validation](pci-validation/README.md) | §7.5 | N/A | ~50 min | ~100 min | 5 |
+| [pci_validation](pci_validation/README.md) | §7.5 | N/A | ~50 min | ~100 min | 5 |
 | [deterministic](deterministic/README.md) | §7.6 | N/A | ~1 hour | ~5 hours | 5 per data point |
 | [corundum-pcilat](corundum-pcilat/README.md) | §8.1 | N/A |  |  | 5 per data point |
 | [nopaxos](nopaxos/README.md) | §8.2 | Figure 10 |  |  | 5 per data point |
