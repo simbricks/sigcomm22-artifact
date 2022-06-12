@@ -16,21 +16,18 @@ DCTCP experiment has two patches to complete its configuration.
 ```bash
 # In directory /simbricks/sims/external/gem5
 $ git apply cache_conf.patch
-$ rm ready
 ```
 
 2. Network interface entry size
 ```bash
 # In directory /simbricks
 $ git apply net_entry_size.patch
-$ make clean
 ```
 
-3. Rebuild Gem5 and Simbricks library
+3. Rebuild Simbricks library
 ```bash
 # In directory /simbricks
 $ make 
-$ make external
 ```
 
 For SimBricks lines, we setup the experiment using [ gem5-timingCPU + i40e + ns3 ] combination.
