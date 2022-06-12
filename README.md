@@ -124,5 +124,4 @@ There are still a few minor issues with the artifact or the experiments in the p
 - In Tab. 3 in the paper: we found upon inspection that the QT + CB + SW/NS lines reported in the paper were run with the wrong host simulator frequency (8GHz instead of 4GHz as reported). The artifact repo contains the updated json file with the correct frequency.
 - §A.3, Table 2 numbers also don’t match current code anymore, as we have been doing a lot of refactoring and cleanup of the code. We will update the table in the camera ready version of the paper to match the code.
 - After refactoring our gem5 adapters, and importing a few other gem5 fixes we have found that our experiment validating our simulations as deterministic, does not always result in the same exit tick. But as the rest of the detailed simulation log with timestamps exactly matches, this is only a minor cosmetic issue that we hope to address before publication.
-- TODO: pci latency experiment with 1us stuck
-- TODO: corundum pci latency experiment scripts
+
