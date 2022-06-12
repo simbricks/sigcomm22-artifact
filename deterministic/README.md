@@ -40,7 +40,7 @@ $ make clean
 $ make
 ```
 
-Now you are ready to run the experiment (replace 5 with 2 to only run two
+Now you are ready to run the experiment (replace 5 with 2 to run fewer
 repetitions):
 
 ```bash
