@@ -96,7 +96,7 @@ Our artifact comprises the following experiments from the paper. The table below
 | [net-decmp](net-decmp/README.md) | §7.3.2 para 2,3 | N/A |  | ~5 min | 3~37 |
 | [host_scale](host_scale/README.md) | §7.4.1 | Figure 7 | see graph |  | 5 - 43 |
 | [dist_memcache](dist_memcache/README.md) | §7.4.2 para 2 | Figure 8 | 200 - 1000 min | ~ 120 hours | 1x44 - 26x44 |
-| [eth-accuracy](eth-accuracy/README.md) | §7.5 | N/A |  | seconds | 2 |
+| [eth_accuracy](eth_accuracy/README.md) | §7.5 | N/A |  | seconds | 2 |
 | [pci_validation](pci_validation/README.md) | §7.5 | N/A | ~50 min | ~100 min | 5 |
 | [deterministic](deterministic/README.md) | §7.6 | N/A | ~1 hour | ~5 hours | 5 per data point |
 | [corundum_pcilat](corundum_pcilat/README.md) | §8.1 | N/A |  |  | 5 per data point |
