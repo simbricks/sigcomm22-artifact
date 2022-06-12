@@ -1,0 +1,109 @@
+-1 CosimNetDevice:CosimNetDevice()
+-1 CosimNetDevice:SetNode(0x55cd43b04ac0)
+-1 CosimNetDevice:SetIfIndex(0)
+-1 CosimNetDevice:SetReceiveCallback()
+-1 CosimNetDevice:SetNode(0x55cd43b04ac0)
+-1 PacketSocketServer:PacketSocketServer(0x55cd43b0a170)
+-1 PacketSocketServer:SetLocal(0x55cd43b0a170, 03-0f-01:00:00:00:00:00:01:02:06:01:02:03:04:05:06)
+-1 Run Emulation.
+0 PacketSocketServer:StartApplication(0x55cd43b0a170)
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 1 packets and 1024 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 1500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 2 packets and 2048 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 2500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 3 packets and 3072 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 3500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 4 packets and 4096 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 4500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 5 packets and 5120 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 5500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 6 packets and 6144 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 6500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 7 packets and 7168 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 7500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 8 packets and 8192 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 8500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 9 packets and 9216 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 9500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 10 packets and 10240 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 10500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 11 packets and 11264 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 11500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 12 packets and 12288 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 12500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 13 packets and 13312 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 13500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 14 packets and 14336 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 14500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 15 packets and 15360 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 15500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 16 packets and 16384 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 16500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 17 packets and 17408 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 17500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 18 packets and 18432 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 18500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 19 packets and 19456 bytes
+-1 CosimNetDevice:AdapterRx()
+0 CosimNetDevice:GetAddress()
+0 CosimNetDevice:GetIfIndex()
+0 PacketSocketServer:HandleRead(0x55cd43b0a170, 0x55cd43b0a230)
+0 At time 19500000s packet sink received 1024 bytes from 03-0f-01:00:00:00:00:00:01:02:06:00:00:00:00:00:00 total Rx 20 packets and 20480 bytes
