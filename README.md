@@ -111,6 +111,11 @@ Our results fall into two categories: behavior/performance of the simulated syst
 
 More generally the SimBricks framework is also flexible to support new configurations of simulators we have not run in the paper. While documentation of the orchestration framework is still somewhat sparse, we hope that the broad range of examples in the experiments/pyexp directory can serve as a starting point while we work on extending documentation.
 
+Please note that we have made changes to the code since submission, including
+cleanup and and some optimizations. As a result behavior does not match the
+submission exactly. But we have found no major changes that affect the claims in
+motivation or evaluation.
+
 ### Errata
 
 There are still a few minor issues with the artifact or the experiments in the paper:
