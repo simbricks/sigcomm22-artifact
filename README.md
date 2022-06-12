@@ -15,15 +15,15 @@ For both repositories we have created a `sigcomm22-ae-submission` tag, and a `si
 
 ### Artifact Script and Result Repository
 
-The Artifact repository contains instructions for reproducing the experiments in the paper along with logs from experiment runs used in the paper. Each experiment is in a separate directory labeled with the experiment code-name (see overview below). Most experiment directories contain a `paper` directory with execution logs used to produce the graphs and results in the paper (except in a few cases where we no longer have the original logs). In some experiments we included an `updated` folder with logs run with the version submitted for evaluation. Each experiment also includes a `README.md` with more details on the specific experiment. Finally, for some of the experiments we also include plotting scripts for producing the graphs in the paper. 
+The Artifact repository contains instructions for reproducing the experiments in the paper along with logs from experiment runs used in the paper. Each experiment is in a separate directory labeled with the experiment code-name (see overview below). Most experiment directories contain a `paper` directory with execution logs used to produce the graphs and results in the paper (except in a few cases where we no longer have the original logs). In some experiments we included an `updated` folder with logs run with the version submitted for evaluation. Each experiment also includes a `README.md` with more details on the specific experiment. Finally, for some of the experiments we also include plotting scripts for producing the graphs in the paper.
 
 ### Main SimBricks Repository
 
 This repository contains the open source (MIT licensed) code for SimBricks, including sub-module pointers (in `sims/external/`) for modified versions of external simulators we have integrated into SimBricks. The [README in the main SimBricks repository](https://github.com/simbricks/simbricks/blob/main/README.md) contains an overview of the repo and general instructions for how to build and run SimBricks.
 
-For this artifact evaluation, we suggest using our prepared docker images on [docker hub](https://hub.docker.com/u/simbricks) that can be used for all experiments (except `tofino` more described there, see the README). To build these images locally instead, clone the main SimBricks repo and run `make docker-images docker-images-debug`. SimBricks can also be built locally outside of docker (refer to the README).
+For this artifact evaluation, we suggest using our prepared docker images on [docker hub](https://hub.docker.com/u/simbricks) that can be used for all experiments (except the `tofino` docker image -- for more details, see the [tofino experiment README](tofino/README.md)). To build these images locally instead, clone the main SimBricks repo and run `make docker-images docker-images-debug`. SimBricks can also be built locally outside of docker (refer to the [simbricks README](https://github.com/simbricks/simbricks/blob/main/README.md)).
 
-For the artifact three docker images are relevant:
+For artifact evaluation, three docker images are relevant:
 
 - `simbricks/simbricks:sigcomm22-ae` is the main SimBricks docker image including a compiled version of SimBricks and external simulators.
 - `simbricks/simbricks-gem5opt:sigcomm22-ae` is similar to the main image but additionally also includes the debug version of gem5 (`gem5.opt`) which is required to run two of the experiments that require detailed debug logs of gem5 simulations. But this image is also an additional 1.2GB larger.
@@ -49,7 +49,7 @@ Generally, the first step for running an experiment is starting an interactive s
 $ docker run --device=/dev/kvm --privileged -it simbricks/simbricks:sigcomm22-ae /bin/bash
 ```
 
-Next, some experiments might require additional VM images to be built once (e.g. see `nopaxos`). All experiments involving gem5 (most of them) require as a next step that the disk images for simulated guest hosts be converted to raw files from qcow2. As these sparse raw images interact badly with docker storage in images, we do not include these. Instead we include a Makefile target that will convert built images to raw within less than a minute typically:
+Next, some experiments might require additional VM images to be built once (e.g., see [nopaxos](nopaxos/README.md)). All experiments involving gem5 (most of them) require as a next step that the disk images for simulated guest hosts be converted to raw files from qcow2. As these sparse raw images interact badly with docker storage in images, we do not include these. Instead we include a Makefile target that will convert built images to raw within less than a minute typically:
 
 ```bash
 /simbricks$ make convert-images-raw
@@ -59,9 +59,9 @@ Next, some experiments might require additional VM images to be built once (e.g.
 
 For our experiments we use the SimBricks python orchestration framework in the experiments subdirectory (`/simbricks/experiments` in the container). The orchestration framework is invoked either through `simbricks-run` (only in the container) or python3 run.py, and takes additional parameters specfiying which experiments to run.
 
-SimBricks experiments are specified in individual python scripts assembling potentially multiple experiment configurations, and mostly stored in `/simbricks/experiments/pyexps`. Each python script generates a list `experiments` of all configurations supported by the script, each with a label. `simbricks-run --list pyexps/netperf.py` will list the available experiment configurations in the script.
+SimBricks experiments are specified in individual python scripts which assemble one or multiple experiment configurations. The python scripts are mostly stored in `/simbricks/experiments/pyexps`. Each python script generates a list `experiments` of all configurations supported by the script, each with a label. `simbricks-run --list pyexps/netperf.py` will list the available experiment configurations in the script.
 
-When run without the `--list` parameter, the framework will run these configurations (silently and sequentally by default) and then store the result of each experiment in `out/EXPNAME-1.json`, including outputs of all component simulators, commands run, and the start and end times of the experiment. This enables automated runs of multiple experiments and then analyzing data in a separate step. If a file `out/EXPNAME-1.json` already exists, then the experiment `EXPNAME` will not be re-run unless `--force` is specified.
+When running without the `--list` parameter, the framework will run these configurations (silently and sequentally by default) and then store the result of each experiment in `out/EXPNAME-1.json`, including outputs of all component simulators, commands run, and the start and end times of the experiment. This enables automated runs of multiple experiments and then analyzing data in a separate step. If a file `out/EXPNAME-1.json` already exists, then the experiment `EXPNAME` will not be re-run unless `--force` is specified.
 
 When running with `--verbose`, output from each simulator is additionally printed live to stdout. This is in general useful for debugging but may be a bit noisy for very large experiments with detailed output.
 
@@ -69,7 +69,7 @@ The orchestration runtime also supports the `--filter` parameter to specify glob
 
 The runtime also supports running multiple experiments in parallel when specifying `--parallel`. The runtime will ensure not to oversubscribe cores. This is useful for experiments that do not measure simulation time, but are only concerned with behavior of the simulated system. For the experiments measuring simulation time, running them in parallel can affect simulation time (among other things because of CPU thermal management as described in the paper). So we suggest running these experiments sequentially.
 
-Note that the orchstration script will only successfully write the output to the json file if the experiment finishes cleanly (as opposed to interrupting the python script, e.g., with Ctrl+C). To abort an experiment without losing the output typically manually killing all host simulators (qemu-system-x86 or gem5 will cause the experiment to complete).
+Note that the orchstration script will only successfully write the output to the json file if the experiment finishes cleanly (as opposed to interrupting the python script, e.g., with Ctrl+C). To abort an experiment without losing the output typically requires manually killing all host simulators (killing qemu-system-x86 or gem5 will cause the experiment to complete).
 
 Finally, a few of the experiments for baselines do not involve SimBricks, and for these we use shell scripts to directly run these (see per-experiment details).
 
@@ -100,7 +100,7 @@ Our artifact comprises the following experiments from the paper. The table below
 | [pci_validation](pci_validation/README.md) | §7.5 | N/A | ~50 min | ~100 min | 5 |
 | [deterministic](deterministic/README.md) | §7.6 | N/A | ~1 hour | ~5 hours | 5 per data point |
 | [corundum-pcilat](corundum-pcilat/README.md) | §8.1 | N/A |  |  | 5 per data point |
-| [nopaxos](nopaxos/README.md) | §8.2 | Figure 10 |  |  | 5 per data point |
+| [nopaxos](nopaxos/README.md) | §8.2 | Figure 10 | ~30-50 mins | ~6 hours | 5 per data point |
 | [tofino](tofino/README.md) | §8.2 | Figure 10 |  |  |  |
 
 ## Artifact Claims
