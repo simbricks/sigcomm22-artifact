@@ -47,7 +47,17 @@ repetitions):
 $ ./ae/deterministic.sh 5
 ```
 
+## Processing Output
+
 The script will first run the simulation and then parse the `json` file into
 `host.client.0`, `host.server.0`, `net.`, `nic.client.0`, `nic.server.0` files
 under the  `experiment/out/dt-gt-ib-sw/[run_idx]/` directory. The the user can
-compare the timestamps across the different runs.
+compare the timestamps across the different runs. The script will also filter
+out just the timestamps of the client host lines in the `host-trim` file for
+easy comparison with diff.
+
+You can also separately parse the output (including the files in the `paper` or
+`updated` directory by changing the path from `./out`) as follows:
+```bash
+$ ./ae/deterministic-parse.sh 5 ./out
+```
