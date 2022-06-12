@@ -10,9 +10,11 @@ This experiment configures 2~32 hosts to connect to a switch. Half of the hosts 
 
 The script generates the result file `dist.data` in `/simbricks/experiments/ae/` directory.
 
-For running dist-gem5 smoothly, the user should make sure 
-
-`$ ssh localhost` command works.
+For running dist-gem5 smoothly, the user should make sure `$ ssh localhost`
+command works. For this using the `simbricks/simbricks-dist-worker` image as
+with the dist memcache experiment is easiest. Please refer to the instructions
+in that readme for how to start the container (start first with sshd, and then
+use `docker exec` to get a shell).
 
 ```bash
 # make sure ssh localhost works
