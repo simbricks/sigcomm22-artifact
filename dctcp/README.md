@@ -73,3 +73,8 @@ The artifact repository also has the gnuplot file `dctcp.gnuplot` that converts 
 $ gnuplot dctcp.gnuplot > result.pdf 
 ```
 
+## Physical Testbed Results
+
+Finally for completeness we also include the raw iperf logs we collected in the
+physical testbed in the `paper/testbed-results` directory. As described in the
+paper, the graph only uses the 4K MTU.
