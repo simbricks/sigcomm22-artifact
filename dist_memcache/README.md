@@ -32,7 +32,7 @@ Next, pick one container as the leader and only on this one prepare to initiate 
 ```json
 [
 	{"type": "local",
-	 "ip": "10.10.1.1"}**,**
+	 "ip": "10.10.1.1"},
 
 	{"type": "remote",
 	 "workdir": "/simbricks",
