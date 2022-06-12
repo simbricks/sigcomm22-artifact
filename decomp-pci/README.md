@@ -1,23 +1,24 @@
-# Decomposition of Parallelism (extracting e1000, network simulator bottleneck)
+# Decomposition of Parallelism: PCIe
 
-The script will validate the results in `7.3.2` . 
+**Codename:** `decomp-pci`
 
-## Overview
+The script will validate the results in the first paragraph of `7.3.2` . Here,
+we compare the performance of running a simulation with gem5's builtin e1000 NIC
+to using our extracted version of the e1000 NIC connected through the SimBricks
+PCIe interface. This shows that the additional parallelism from decomposing the
+simulation into parallel pieces, outweighs the communication cost for SimBricks
+interfaces resulting in an overall lower simulation time.
 
-```bash
-# - This shows the simulation time difference of decomposing NIC from Gem5, 
-# instead of gem5 built-in NIC.
-# It compares the simulation times of gem5-i40e-switch versus 
-# [ gem5 + built-in E1000 ]-switch configurations.
+## Running Experiment
 
-# The first experiment result is the same as the 2-host data point from Figure 7.
-# or the output of running pyexps/ae/f7_scale.py, which is out/host-gt-ib-sw-1000m-2-1.json 
-# 
-# The second experiment result is the same as the 2-host data point from Figure 6.
-# or the output of running experiments/ae/dist-gem5.sh, which is sims/external/gem5/util/dist/test/run-2.out
+This experiment does not need to run any additional data points but instead uses
+two result files from different experiments, first the 1-client (two host)
+configuration from `host_scale`, and the 2 host SimBricks point from the
+`dist_gem5` comparison experiment.
 
-# - This experiment will validate the statements in 7.3.2
-# The result will be printed on stdout
-# Run in /simbricks/experiments/
-$ ./ae/net-decmp.sh
-```
+## Processing Output
+
+We again just directly use the parsed results from those two prior experiments.
+See [host_scale.dat](../host_scale/host_scale.dat) and the last column in
+[dist_gem5.dat](../dist_gem5/dist_gem5.dat) (i.e. 138 vs 350 minutes). We still
+include the raw data files in the `paper` directory for completeness.
