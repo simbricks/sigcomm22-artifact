@@ -33,17 +33,17 @@ For the artifact three docker images are relevant:
 
 Running SimBricks with docker images, requires a working docker installation on the host, but other software dependencies are covered by docker images. There are however a few requirements for the host machines.
 
-First off, many of the simulations require **kvm virtualization support**, either for performance (regular qemu simulations are multiple times faster than without kvm, and building additional disk images where required is much slower without kvm) or functionality (gem5 kvm configurations have no fallback). This requires the host kernel to support kvm and have it enabled. When running the SimBricks docker container, pass the `--device /dev/kvm` swtich to `docker run`.
+First off, many of the simulations require **kvm virtualization support**, either for performance (regular qemu simulations are multiple times faster than without kvm, and building additional disk images where required is much slower without kvm) or functionality (gem5 kvm configurations have no fallback). This requires the host kernel to support kvm and have it enabled. When running the SimBricks docker container, pass the `--device /dev/kvm` switch to `docker run`.
 
-*gem5*-kvm configurations require `/proc/sys/kernel/perf_event_paranoid` to be set to -1 on the host and suggest runninng the guest container to run with `--privileged`.
+*gem5*-kvm configurations require `/proc/sys/kernel/perf_event_paranoid` to be set to -1 on the host and we suggest runninng the guest container with `--privileged`.
 
-Hardware requirements vary significantly. The overview table below describes the number of processor cores required for experiments. Running with fewer cores will result runs that fail or run orders of magnitude slower (SimBricks simulators use polled shared memory queues, and the implementation interacts badly with oversubscribed cores). For memory, we recommend at least 4-8GB of memory per simulated host system. Smaller experiments should run with 16GB of ram, while a copule of the largest experiments might require close to 200GB. Only the one distributed experiment requires more than one machine, but will need a 20Gbps network (10Gbps may still work but is untested by us). The experiments will also require around 20-100GB of disk storage (depending on how many are run and which logs are retained, and the docker storage driver).
+Hardware requirements vary significantly. The overview table below describes the number of processor cores required per experiment. Running with fewer cores will result in runs that fail or run orders of magnitude slower (SimBricks simulators use polled shared memory queues, and the implementation interacts badly with oversubscribed cores). For memory, we recommend at least 4-8GB of memory per simulated host system. Smaller experiments should run with 16GB of ram, while a copule of the largest experiments might require close to 200GB. Only the one distributed experiment requires more than one machine, but will need a 20Gbps network (10Gbps may still work but is untested by us). The experiments will also require around 20-100GB of disk storage (depending on how many are run and which logs are retained, and the docker storage driver).
 
 ## Running Experiments
 
 ### Container Preparation
 
-Generally, the first step for running an experiment is interactively starting a shell in the SimBricks docker container (the `dist_memcache` experiment is a bit more complicated):
+Generally, the first step for running an experiment is starting an interactive shell in the SimBricks docker container (the `dist_memcache` experiment is a bit more complicated):
 
 ```bash
 $ docker run --device=/dev/kvm --privileged -it simbricks/simbricks:sigcomm22-ae /bin/bash
@@ -63,13 +63,13 @@ SimBricks experiments are specified in individual python scripts assembling pote
 
 When run without the `--list` parameter, the framework will run these configurations (silently and sequentally by default) and then store the result of each experiment in `out/EXPNAME-1.json`, including outputs of all component simulators, commands run, and the start and end times of the experiment. This enables automated runs of multiple experiments and then analyzing data in a separate step. If a file `out/EXPNAME-1.json` already exists, then the experiment `EXPNAME` will not be re-run unless `--force` is specified.
 
-When running with `--verbose` output from each simulator is additionally printed to stdout live. This is in general useful for debugging but can may be a bit noisy for very large experiments with detailed output.
+When running with `--verbose`, output from each simulator is additionally printed live to stdout. This is in general useful for debugging but may be a bit noisy for very large experiments with detailed output.
 
 The orchestration runtime also supports the `--filter` parameter to specify glob patterns to only run a subset of experiments, particularly useful to run individual data points selectively. Multiple instances of the parameter can be specified and will be treated as including any configuration that matches any of the filters.
 
-The runtime also supports running multiple experiments in parallel when specifying `--parallel`. The runtime will ensure not to oversubscribe cores. This is useful for experiments that do not measure simulation time, but are only concerned with behavior of the simulated system. For the experiments measuring simulation time, running them in parallel can affect simulation time (among other things because of CPU thermal management as described in the paper). So suggest running these experiments sequentially.
+The runtime also supports running multiple experiments in parallel when specifying `--parallel`. The runtime will ensure not to oversubscribe cores. This is useful for experiments that do not measure simulation time, but are only concerned with behavior of the simulated system. For the experiments measuring simulation time, running them in parallel can affect simulation time (among other things because of CPU thermal management as described in the paper). So we suggest running these experiments sequentially.
 
-Note that the orchstration script will only successfully write the output to the json file if the experiment finishes cleanly (as opposed to interrupting the python script e.g. with Ctrl+C). To abort an experiment without losing the output typically manually killing all host simulators (qemu-system-x86 or gem5 will cause the experiment to complete).
+Note that the orchstration script will only successfully write the output to the json file if the experiment finishes cleanly (as opposed to interrupting the python script, e.g., with Ctrl+C). To abort an experiment without losing the output typically manually killing all host simulators (qemu-system-x86 or gem5 will cause the experiment to complete).
 
 Finally, a few of the experiments for baselines do not involve SimBricks, and for these we use shell scripts to directly run these (see per-experiment details).
 
@@ -107,7 +107,7 @@ Our artifact comprises the following experiments from the paper. The table below
 
 The two repositories should contain all of the software components, configurations, and scripts to run and reproduce the experiments in the paper. We also include most of the raw logs for the simulations used for graphs and results in the paper.
 
-Our results fall into two categories: behavior/performance of the simulated system, and measured simulation times. The former results should be (close to) exactly reproducible (see errata below). But simulation time results are significantly affected by the physical testbed used. Here we expect minor differences even with closely matching hardware to what we report in the paper. Absolute simulation times may differ significantly, however we expect general trends such as scalability and relative performance on the same hardware to be similar to what measured.
+Our results fall into two categories: behavior/performance of the simulated system, and measured simulation times. The former results should be (close to) exactly reproducible (see errata below). But simulation time results are significantly affected by the physical testbed used. Here we expect minor differences even with closely matching hardware to what we report in the paper. Absolute simulation times may differ significantly, however we expect general trends such as scalability and relative performance on the same hardware to be similar to what we measured.
 
 More generally the SimBricks framework is also flexible to support new configurations of simulators we have not run in the paper. While documentation of the orchestration framework is still somewhat sparse, we hope that the broad range of examples in the experiments/pyexp directory can serve as a starting point while we work on extending documentation.
 
@@ -115,7 +115,7 @@ More generally the SimBricks framework is also flexible to support new configura
 
 There are still a few minor issues with the artifact or the experiments in the paper:
 
-- We ran the SimBricks line for dctcp experiment had with slightly different gem5 configuration parameters to the current defaults. We will update this in the paper and we also a diff in the artifact to change the parameters to match the paper, allowing the line to be reproduced exactly. This experiment also requires a larger maximum MTU which is currently not yet runtime configurable. The dctcp readme discusses details for the latter.
+- We ran the SimBricks line for dctcp experiment with slightly different gem5 configuration parameters to the current defaults. We will update this in the paper and we also a diff in the artifact to change the parameters to match the paper, allowing the line to be reproduced exactly. This experiment also requires a larger maximum MTU which is currently not yet runtime configurable. The dctcp readme discusses details for the latter.
 - In Tab. 3 in the paper: we found upon inspection that the QT + CB + SW/NS lines reported in the paper were run with the wrong host simulator frequency (8GHz instead of 4GHz as reported). The artifact repo contains the updated json file with the correct frequency.
 - §A.3, Table 2 numbers also don’t match current code anymore, as we have been doing a lot of refactoring and cleanup of the code. We will update the table in the camera ready version of the paper to match the code.
 - After refactoring our gem5 adapters, and importing a few other gem5 fixes we have found that our experiment validating our simulations as deterministic, does not always result in the same exit tick. But as the rest of the detailed simulation log with timestamps exactly matches, this is only a minor cosmetic issue that we hope to address before publication.
