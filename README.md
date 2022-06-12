@@ -100,7 +100,7 @@ Our artifact comprises the following experiments from the paper. The table below
 | [pci_validation](pci_validation/README.md) | §7.5 | N/A | ~50 min | ~100 min | 5 |
 | [deterministic](deterministic/README.md) | §7.6 | N/A | ~1 hour | ~5 hours | 5 per data point |
 | [corundum-pcilat](corundum-pcilat/README.md) | §8.1 | N/A |  |  | 5 per data point |
-| [nopaxos](nopaxos/README.md) | §8.2 | Figure 10 | ~30-50 mins | ~6 hours | 9 - 27 |
+| [nopaxos](nopaxos/README.md) | §8.2 | Figure 10 | ~30-50 mins | ~11 hours | 9 - 29 |
 | [tofino](tofino/README.md) | §8.2 | Figure 10 |  |  |  |
 
 ## Artifact Claims
