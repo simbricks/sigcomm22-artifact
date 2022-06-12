@@ -11,11 +11,11 @@ For simplicity we do not include instructions for the physical system baseline (
 
 In this experiment, we setup a network in dumbbell topology (two switches connected by a bottleneck link) and attach two servers at its left and two clients at its right side. The hosts are running an Iperf TCP test for 10 seconds with MTU size 4KB.
 
-The DCTCP experiment requires two patches.
+The DCTCP experiment requires two patches to complete its configuration.
 1. Gem5 cache latency 
 ```bash
 # In directory /simbricks/sims/external/gem5
-$ git apply cache_conf.patch
+$ patch -p1 < cache_conf.patch
 ```
 
 2. Network interface entry size
