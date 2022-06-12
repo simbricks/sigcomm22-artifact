@@ -99,7 +99,7 @@ Our artifact comprises the following experiments from the paper. The table below
 | [eth_accuracy](eth_accuracy/README.md) | §7.5 | N/A |  | seconds | 2 |
 | [pci_validation](pci_validation/README.md) | §7.5 | N/A | ~50 min | ~100 min | 5 |
 | [deterministic](deterministic/README.md) | §7.6 | N/A | ~1 hour | ~5 hours | 5 per data point |
-| [corundum_pcilat](corundum_pcilat/README.md) | §8.1 | N/A |  |  | 5 per data point |
+| [corundum_pcilat](corundum_pcilat/README.md) | §8.1 | N/A | ~12 hour  | ~12 hour | 5 per data point |
 | [nopaxos](nopaxos/README.md) | §8.2 | Figure 10 |  |  | 5 per data point |
 | [tofino](tofino/README.md) | §8.2 | Figure 10 |  |  |  |
 
