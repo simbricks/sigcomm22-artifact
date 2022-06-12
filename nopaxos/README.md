@@ -1,4 +1,4 @@
-# In-network processing usecase
+# NOPaxos experiment (end-host sequencer and ns-3 sequencer)
 
 ## Overview
 

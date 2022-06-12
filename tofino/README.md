@@ -1,4 +1,4 @@
-# Tofino experiment
+# NOPaxos Tofino sequencer experiment
 
 ## Overview
 
