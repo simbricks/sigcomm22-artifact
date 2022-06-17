@@ -30,6 +30,13 @@ $ git apply net_entry_size.patch
 $ make -j `nproc`
 ```
 
+We made a change on ns-3 repository after building the docker image. If you are using pre-built docker image, please update the ns-3 script.
+
+4. Git pull ns-3 
+```bash
+# In directory /simbricks/sims/external/ns-3
+$ git pull
+```
 For the SimBricks line, we set up the experiment using the combination [ gem5-timingCPU + i40e + ns3 ].
 For the ns-3 line, we set up the same topology as using standalone ns-3.
 The script `simbricks-dctcp.sh` generates the data for both lines.
