@@ -25,17 +25,14 @@ set style line 5 \
     pointtype 13 pointsize 1.3  
 
 set ylabel "Simulation Time [Min.]"
-set yrange [0:670]
+set yrange [0:100]
 set xlabel "PCIe latency [ns]"
 set xrange [-0.5:2.5]
 unset xtics
 set xtics nomirror
 set xtics ("10" 0, "50" 0.5, "100" 1, "500" 1.5, "1000" 2)
+set boxwidth 0.25
+set errorbars linecolor black
 unset key
 plot \
-'pci-latency.dat' every 6::0 using (0):2 with boxes ls 1,\
-'pci-latency.dat' every 6::1 using (0.5):2 with boxes ls 2,\
-'pci-latency.dat' every 6::2 using (1):2 with boxes ls 3,\
-'pci-latency.dat' every 6::3 using (1.5):2 with boxes ls 4,\
-'pci-latency.dat' every 6::4 using (2):2 with boxes ls 5
-
+'pci-latency.dat' using ($0*0.5):2:3 with boxerrorbars ls 4
